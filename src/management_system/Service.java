@@ -15,10 +15,9 @@ public class Service {
 		addAndRetrieve.put(firstName, newAccount);
 	}
 	
-	public void retrieveAccount(String firstName) {
-		 addAndRetrieve.get(firstName);
-		 System.out.println(addAndRetrieve.get(firstName));
-		 System.out.println(addAndRetrieve.get(firstName).getDetails());
+	public Account retrieveAccount(String firstName) {
+		 return addAndRetrieve.get(firstName);
+
 	}
 	
 	

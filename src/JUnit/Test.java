@@ -1,15 +1,21 @@
 package JUnit;
 
+import static org.junit.Assert.*;
+
 import org.junit.After;
 import org.junit.Before;
 
 import management_system.Service;
 
 public class Test {
-
+	private Service newService = new Service();
+	
 	@Before
 	public void setUp() {
-		
+		newService.addAccount("joel", "jj", "3728");
+		newService.addAccount("john", "kool", "3452");
+
+		newService.retrieveAccount("joel");
 	}
 	
 	@After
@@ -19,13 +25,9 @@ public class Test {
 	
 	@org.junit.Test
 	public void methodTest() {
-		Service newService = new Service();
-		newService.addAccount("joel", "jj", "3728");
-		newService.addAccount("john", "kool", "3452");
+		assertEquals("joel", newService.retrieveAccount("joel").getFirstName());
+		assertEquals("3452", newService.retrieveAccount("john").getAccountNumber());
 		
-		newService.retrieveAccount("joel");
-		
-		//Assert.assertEquals("joel".)
 	}
 	
 }
