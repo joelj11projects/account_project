@@ -38,14 +38,10 @@ public class Service {
 		
 		
 		for(int i=0; i< addAndRetrieve.size() ;i++) {
-		
 			String gName = addAndRetrieve.get(i).getFirstName();
-			
-		if (gName.equals(givenName) ) {
-				
-				//System.out.println(retrieveAccount(givenName));
+				if (gName.equals(givenName) ) {
 				countNames++;
-			}
+				}
 		} 
 		return countNames;
 	}
