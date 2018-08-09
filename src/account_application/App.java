@@ -17,7 +17,7 @@ public class App {
 		newService.addAccount("john", "kool", "3452");
 
 		newService.retrieveAccount("joel");
-		Map<String, Account> jsonList = newService.getAddAndRetrieve();
+		Map<Integer, Account> jsonList = newService.getAddAndRetrieve();
 		Json jsonConvert = new Json();	
 		String jConvert = jsonConvert.jsonConverter(jsonList);
 

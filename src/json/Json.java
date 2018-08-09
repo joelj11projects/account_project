@@ -11,7 +11,7 @@ public class Json {
 
 	Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	
-	public String jsonConverter(Map<String, Account> jsonList) {
+	public String jsonConverter(Map<Integer, Account> jsonList) {
 		
 		return gson.toJson(jsonList);
 	}

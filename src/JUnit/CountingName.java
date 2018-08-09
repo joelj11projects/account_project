@@ -1,22 +1,25 @@
 package JUnit;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 
 import management_system.Service;
 
 public class CountingName {
 
-	private Service newService = new Service();
+	private Service newService;
 	
 	@Before
 	public void setUp() {
+		newService = new Service();
 		newService.addAccount("joel", "jj", "3728");
 		newService.addAccount("john", "kool", "3452");
 		newService.addAccount("john", "king", "3466");
 		newService.addAccount("liam", "bo", "3452");
+		newService.addAccount("john", "king", "9726");
 	}
 	
 	@After
@@ -24,9 +27,11 @@ public class CountingName {
 		
 	}
 	
-	@org.junit.Test
+	@Test
 	public void methodTest() {
-		assertEquals(2, newService.countName("john"));
+		assertEquals(3, newService.countName("john"));
+		
+		
 		
 	}
 }
